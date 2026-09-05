@@ -1,22 +1,76 @@
-<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kalkulator Hino Lubuklinggau</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"></head><body>
-<header><div><h1>Kalkulator HINO</h1><p>Thamrin Lubuklinggau</p></div><span class="badge">VIN 2026</span></header>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kalkulator HINO Lubuklinggau</title>
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-mark">H</div><div><h1>Kalkulator HINO</h1><p>Thamrin Lubuklinggau</p></div></div>
+  <span class="badge">2026</span>
+</header>
+
 <main>
-<section class="card"><h2>1. Data Unit</h2>
-<label>Hino <select id="series"></select></label>
-<label>Tipe Unit <select id="type"></select></label>
-<label>Karoseri <select id="body"></select></label>
-<label>Warna Plat <select id="plate"><option selected>Hitam</option><option>Kuning</option></select></label>
-<label>Harga Karoseri <input id="bodyPrice" inputmode="numeric" placeholder="Rp 0"></label>
+<section class="hero card">
+  <div class="hero-copy">
+    <span class="eyebrow">SALES CALCULATOR</span>
+    <h2>Hitung unit HINO<br><strong>lebih cepat & rapi.</strong></h2>
+    <p>Pilih unit, karoseri, plat, lalu lihat harga nett dan simulasi angsuran dalam satu layar.</p>
+    <div class="quick-tags"><span>HINO 300</span><span>HINO 500</span><span>Leasing</span></div>
+  </div>
+  <div class="unit-visual">
+    <div class="visual-glow"></div>
+    <img id="unitImage" src="https://www.hino.co.id/assets/uploads/products/c60a15729ef206da7f96411d6c0f522b.png" alt="Unit HINO">
+    <div class="visual-caption"><span id="visualSeries">HINO 300</span><b id="visualType">136 HDX</b></div>
+  </div>
 </section>
-<section class="card result"><h2>2. Harga Otomatis</h2><div id="unitTitle" class="unit-title">-</div>
-<div class="rows"><div>Harga OFF <b id="off">-</b></div><div>BBN <b id="bbn">-</b></div><div>Harga Karoseri <b id="karoseri">-</b></div><div class="strong">Harga ON Nett <b id="onNett">-</b></div><div>Harga Pricelist <b id="pricelist">-</b></div><div>Harga OTR <b id="otr">-</b></div><div class="strong">Diskon Dealer <b id="discDealer">-</b></div></div>
+
+<section class="card step-card">
+  <div class="section-head"><div><span class="step">01</span><h2>Pilih Unit</h2></div><span class="hint">Data kendaraan</span></div>
+  <div class="field-grid">
+    <label>Series<select id="series"></select></label>
+    <label>Tipe Unit<select id="type"></select></label>
+    <label>Karoseri<select id="body"></select></label>
+    <label>Warna Plat<select id="plate"><option selected>Hitam</option><option>Kuning</option></select></label>
+    <label class="full">Harga Karoseri<input id="bodyPrice" inputmode="numeric" placeholder="Rp 0"></label>
+  </div>
 </section>
-<section class="card"><h2>3. Simulasi Leasing</h2>
-<label>Harga OTR Leasing <input id="otrLease" inputmode="numeric" placeholder="Rp 0"></label>
-<div class="rows"><div>Diskon DP <b id="discDP">-</b></div></div>
-<label>TDP <input id="tdp" inputmode="numeric" placeholder="Rp 0"></label>
-<div class="rows"><div class="strong">DP Setor <b id="dpSetor">-</b></div></div>
+
+<section class="card price-card">
+  <div class="section-head"><div><span class="step">02</span><h2>Ringkasan Harga</h2></div><span class="unit-pill" id="unitTitle">-</span></div>
+  <div class="price-grid">
+    <div class="price-row"><span>Harga OFF</span><b id="off">-</b></div>
+    <div class="price-row"><span>BBN</span><b id="bbn">-</b></div>
+    <div class="price-row"><span>Harga Karoseri</span><b id="karoseri">-</b></div>
+    <div class="price-row highlight"><span>Harga ON Nett</span><b id="onNett">-</b></div>
+    <div class="price-row"><span>Harga Pricelist</span><b id="pricelist">-</b></div>
+    <div class="price-row"><span>Harga OTR</span><b id="otr">-</b></div>
+    <div class="price-row discount"><span>Diskon Dealer</span><b id="discDealer">-</b></div>
+  </div>
 </section>
-<section class="card"><h2>4. Angsuran Simulasi</h2><p class="muted">Simulasi flat. Rate bisa diubah; ini bukan rate resmi IMFI.</p><div class="rates" id="rates"></div><div id="installments" class="installments"></div></section>
-<section class="card small"><h2>Catatan Sumber</h2><ul><li>OFF sementara memakai harga SPV Agustus 2026.</li><li>BBN mengikuti pilihan warna plat dan kategori karoseri.</li><li>Jika tabel sumber BBN berisi data yang tidak tersedia, aplikasi tidak mengarang nilai.</li></ul></section>
-</main><footer>Sales HINO • 0831-8165-5166</footer><script src="script.js"></script></body></html>
+
+<section class="card step-card">
+  <div class="section-head"><div><span class="step">03</span><h2>Simulasi Leasing</h2></div><span class="hint">Input penawaran</span></div>
+  <div class="field-grid">
+    <label>Harga OTR Leasing<input id="otrLease" inputmode="numeric" placeholder="Rp 0"></label>
+    <label>TDP<input id="tdp" inputmode="numeric" placeholder="Rp 0"></label>
+  </div>
+  <div class="mini-summary">
+    <div><span>Diskon DP</span><b id="discDP">-</b></div>
+    <div><span>DP Setor</span><b id="dpSetor">-</b></div>
+  </div>
+</section>
+
+<section class="card installment-card">
+  <div class="section-head"><div><span class="step">04</span><h2>Angsuran Bulanan</h2></div><span class="hint">24–60 bulan</span></div>
+  <p class="muted">Rate dapat disesuaikan mengikuti paket simulasi leasing.</p>
+  <div class="rates" id="rates"></div>
+  <div id="installments" class="installments"></div>
+</section>
+
+<section class="card source-card"><h2>Catatan</h2><ul><li>OFF sementara memakai harga SPV Agustus 2026.</li><li>BBN mengikuti warna plat dan kategori karoseri.</li><li>Data yang tidak tersedia tidak akan dibuat-buat oleh aplikasi.</li></ul></section>
+</main>
+<footer>Sales HINO • <strong>0831-8165-5166</strong></footer>
+<script src="script.js"></script>
+</body></html>
