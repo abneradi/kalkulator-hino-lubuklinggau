@@ -1,0 +1,22 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kalkulator Hino Lubuklinggau</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"></head><body>
+<header><div><h1>Kalkulator HINO</h1><p>Thamrin Lubuklinggau</p></div><span class="badge">VIN 2026</span></header>
+<main>
+<section class="card"><h2>1. Data Unit</h2>
+<label>Hino <select id="series"></select></label>
+<label>Tipe Unit <select id="type"></select></label>
+<label>Karoseri <select id="body"></select></label>
+<label>Warna Plat <select id="plate"><option selected>Hitam</option><option>Kuning</option></select></label>
+<label>Harga Karoseri <input id="bodyPrice" inputmode="numeric" placeholder="Rp 0"></label>
+</section>
+<section class="card result"><h2>2. Harga Otomatis</h2><div id="unitTitle" class="unit-title">-</div>
+<div class="rows"><div>Harga OFF <b id="off">-</b></div><div>BBN <b id="bbn">-</b></div><div>Harga Karoseri <b id="karoseri">-</b></div><div class="strong">Harga ON Nett <b id="onNett">-</b></div><div>Harga Pricelist <b id="pricelist">-</b></div><div>Harga OTR <b id="otr">-</b></div><div class="strong">Diskon Dealer <b id="discDealer">-</b></div></div>
+</section>
+<section class="card"><h2>3. Simulasi Leasing</h2>
+<label>Harga OTR Leasing <input id="otrLease" inputmode="numeric" placeholder="Rp 0"></label>
+<div class="rows"><div>Diskon DP <b id="discDP">-</b></div></div>
+<label>TDP <input id="tdp" inputmode="numeric" placeholder="Rp 0"></label>
+<div class="rows"><div class="strong">DP Setor <b id="dpSetor">-</b></div></div>
+</section>
+<section class="card"><h2>4. Angsuran Simulasi</h2><p class="muted">Simulasi flat. Rate bisa diubah; ini bukan rate resmi IMFI.</p><div class="rates" id="rates"></div><div id="installments" class="installments"></div></section>
+<section class="card small"><h2>Catatan Sumber</h2><ul><li>OFF sementara memakai harga SPV Agustus 2026.</li><li>BBN mengikuti pilihan warna plat dan kategori karoseri.</li><li>Jika tabel sumber BBN berisi data yang tidak tersedia, aplikasi tidak mengarang nilai.</li></ul></section>
+</main><footer>Sales HINO • 0831-8165-5166</footer><script src="script.js"></script></body></html>
